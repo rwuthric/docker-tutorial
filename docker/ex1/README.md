@@ -8,7 +8,7 @@ This is achieved with the following instruction
 ```
 FROM python:3
 ```
-which will pull the official python image (at the time of writing this tutorial, python:3 will include the python version 3.9). You can specify a specific image to pull from. For example you could use `FROM python:3.10` if you want python 3.10.
+which will pull the official python image (at the time of writing this tutorial, python:3 will include the python version 3.11). You can specify a specific image to pull from. For example you could use `FROM python:3.10` if you want python 3.10.
 
 Next we create a user in our docker image. We do this, to avoid any code will be executed later as the root user.
 ```
@@ -143,7 +143,7 @@ This interactive mode is useful to look around within the container and very han
 To quit the runtime, we use simply the `exit` command. Once our runtime closed, we can check with `docker ps --all` that our docker container is no longer present (because we used the `--rm` option to launch it).
 
 ## Cleaning up
-At the end of this exerice it is a good practice to clean up our docker. Check with `docker ps --all` that no undesired containers are present and remove them if needed with `docker rm`.
+At the end of this exercise it is a good practice to clean up our docker. Check with `docker ps --all` that no undesired containers are present and remove them if needed with `docker rm`.
 
 We can as well remove our docker image we created. With
 ```
