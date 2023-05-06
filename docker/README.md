@@ -20,4 +20,5 @@ If you have access only to a windows machine, we recommend you install a virtual
 
 
 ## Examples
-- [ex1](ex1) : Explains how to create a simple Dockerfile, a docker image and run docker containers
+- [Example 1](ex1) : Explains how to create a simple Dockerfile, a docker image and run docker containers
+- [Example 2](ex2) : Explains how to create a Dockerfile in which some additional elements (in this case a python library) needs to be installed
