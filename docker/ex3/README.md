@@ -4,7 +4,7 @@ This example shows how to build a docker image with a micro-service in it, how t
 The micro-service from this example will require port mapping in order to be accessible from the host running docker. This aspect will be introduced during this example.
 
 ## Echo server
-The docker image we want to build will run a micro-service in form of a simple python echo server. The [echo server](echo.py) listens to port 10000 on the `localhost` for incoming connections. 
+The docker image we want to build will run a micro-service in form of a simple python echo server. The [echo server](echo.py) listens to port `10000` on the `localhost` for incoming connections. 
 
 Once a client connects to it, it will echo back to the client and data sent to the echo server.
 
@@ -12,7 +12,7 @@ You can try out the server by running it:
 ```
 python echo.py
 ```
-In a different terminal on your machine running the echo server, you can open a `telnet` session connecting to the localhost on port 1000:
+In a different terminal on your machine running the echo server, you can open a `telnet` session connecting to the localhost on port `10000`:
 ```
 telnet localhost 10000
 ```
