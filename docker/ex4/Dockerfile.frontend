@@ -1,4 +1,4 @@
-# Dockerfile for the back-end micro-service
+# Dockerfile for the front-end micro-service
 
 FROM python:3
 
