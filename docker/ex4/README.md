@@ -58,7 +58,7 @@ docker ps -all
 CONTAINER ID   IMAGE                         COMMAND                CREATED          STATUS          PORTS                                       NAMES
 fc84a0794240   docker-tutorial/ex4-backend   "python3 backend.py"   24 seconds ago   Up 22 seconds   0.0.0.0:3000->3000/tcp, :::3000->3000/tcp   backend
 ```
-and is mapping the port 3000. But still the front-end could not contact the back-end service. The reason is that the front-end and back-end containers are isolated from each others. Only the host (which is running docker) can communicating, because of the port mapping, the back-end and front-end service. To solve this problem we need to attach both containers to a common network which is the topic of the next section.
+and is mapping the port 3000. But still the front-end could not contact the back-end service. The reason is that the front-end and back-end containers are isolated from each others. Only the host (which is running docker) can communicate, because of the port mapping, with the back-end and front-end services. To solve this problem we need to attach both containers to a common network which is the topic of the next section.
 
 ## Docker networks
 Docker networks are created with the ['docker network create'](https://docs.docker.com/engine/reference/commandline/network_create/) command. Let us create a network for our example:
