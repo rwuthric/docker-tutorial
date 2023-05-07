@@ -1,0 +1,11 @@
+# Dockerfile for the back-end micro-service
+
+FROM python:3
+
+RUN useradd --create-home test_user
+USER test_user
+WORKDIR /home/test_user
+
+COPY frontend.py .
+
+CMD [ "python3", "frontend.py" ]
