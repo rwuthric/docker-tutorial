@@ -54,7 +54,7 @@ which means the server will bind to `0.0.0.0` which means it binds to all interf
 ## Creating and building the Dockerfile
 The `Dockerfile` is essentialy the same as the one from [example 1](../ex1). Only difference is we use `echo.py` as python file we want to have isnide our docker image. The image is built the usual way:
 ```
-docker build -t docker-tutorial/ex3
+docker build -t docker-tutorial/ex3 .
 ```
 
 ## Running the service in detached mode
