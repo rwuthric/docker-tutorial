@@ -52,7 +52,7 @@ server_address = ('0.0.0.0', 10000)
 which means the server will bind to `0.0.0.0` which means it binds to all interfaces. This will be key in order we can connect to the server from outside a docker container.
 
 ## Creating and building the Dockerfile
-The `Dockerfile` is essentialy the same as the one from [example 1](../ex1). Only difference is we use `echo.py` as python file we want to have isnide our docker image. The image is built the usual way:
+The `Dockerfile` is essentialy the same as the one from [example 1](../ex1). Only difference is we use `echo.py` as python file we want to have inside our docker image. The image is built the usual way:
 ```
 docker build -t docker-tutorial/ex3 .
 ```
