@@ -2,7 +2,7 @@
 This example shows how to build a docker image with a micro-service which waits for connections and logs them into a file. We will discuss how to attach docker volumes to a container in order the log file can be kept even the container gets removed.
 
 # TCP/IP server
-In this example we run a mini server which listens to port `10000`. Whenever a connection happens, it sends a greeting message to the client and logs in the file `log.txt` (which is int he folder `logs`) the time, IP and port of the connection.
+In this example we run a mini server which listens to port `10000`. Whenever a connection happens, it sends a greeting message to the client and logs in the file `log.txt` (which is in the folder `logs`) the time, IP and port of the connection.
 
 Before trying your server, you need to create a folder `logs` which will contain the `log.txt` file:
 ```
@@ -12,7 +12,7 @@ You can now try out the server by running it:
 ```
 python server.py
 ```
-In a different terminal on your machine running the echo server, you can open a telnet session connecting to the localhost on port 10000:
+In a different terminal on your machine running the server, you can open a telnet session connecting to the localhost on port 10000:
 ```
 telnet localhost 10000
 ```
@@ -34,7 +34,7 @@ rm logs/log.txt
 ```
 
 # Creating and building the Dockerfile
-The Dockerfile contains several new elements compared to [example 1](../ex1). Besides using the `server.py` as file we want to copy inside our docker image, there are some new directives which you may be unfamiliar with. We will explain them later. For the moment, create the image the usual way:
+The Dockerfile contains several new elements compared to [example 1](../ex1). There are some new directives which you may be unfamiliar with. We will explain them later. For the moment, create the image the usual way:
 ```
 docker build -t docker-tutorial/ex5 .
 ```
@@ -44,9 +44,9 @@ To create and run a container from our image we proceed like so:
 ```
 docker run --rm --name ex5 -d -p 6000:10000 docker-tutorial/ex5
 ```
-Here we map prot `10000` from the container to port `6000` of our host running docker. As expected we can connect to our service with `telnet localhost 6000`. However, no entries in the file `log.txt` can be found. In fact even no `log.txt` file is created at all.
+Here we map port `10000` from the container to port `6000` of our host running docker. As expected we can connect to our service with `telnet localhost 6000`. However, no entries in the file `log.txt` can be found. In fact even no `log.txt` file is created at all.
 
-The file `log.txt` is indeed created and populated, but inside our running container. We can verify this by connecting to our running container like so:
+The file `log.txt` is in fact created and populated inside our running container. We can verify this by connecting to our running container like so:
 ```
 docker exec -it ex5 bash
 ```
@@ -126,11 +126,11 @@ With the linux commands `groupadd` and `useradd`, we create a group which has a 
 
 Now, when we attach our local directory `./logs` from our host, the owner of that directory becomes the user running the docker command. This user will in general not have a UID of `1100` and a GID of `1100`. In the example displayed here, the user had actually a UID of `1001` and a GID of `1001`.
 
-In order the `test_user` has write acces to the attached folder `logs`, it has to have the same UID and GID than the user running the docker command. We could simply change our `Dockerfile` with the desired values. But docker offers a better solution. We can actually overwrite the variables defined with `ARG` directive at the moment we build our docker image. In our case we can do this like so. First we need to stop our running container
+In order the `test_user` has write acces to the attached folder `logs`, then the owner of the folder needs to have the same UID and GID than the user running the docker command. We could simply change our `Dockerfile` with the desired values. But docker offers a better solution. We can actually overwrite the variables defined with `ARG` directive at the moment we build our docker image. In our case we can do this like so. First we need to stop our running container
 ```
 docker stop ex5
 ```
-Then we want to remove our image as we want to rebuild it fresh:
+Then we remove our image as we want to rebuild it fresh:
 ```
 docker image rm docker-tutorial/ex5 
 ```
