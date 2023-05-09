@@ -24,3 +24,4 @@ If you have only access to a windows machine, we recommend you install a virtual
 - [Example 2](ex2) : Explains how to create a Dockerfile in which some additional elements (in this case a python library) needs to be installed
 - [Example 3](ex3) : Explains how to run a micro-service in a container and configure port mapping
 - [Example 4](ex4) : Explains how to run two micro-services in two containers and enable them to talk to each others by attaching a docker network
+- [Example 5](ex5) : Explains how to attach docker volumes to a docker container
