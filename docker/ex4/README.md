@@ -100,7 +100,7 @@ docker run --rm --name frontend -d -p 10000:10000 --net tutorial-net docker-tuto
 ```
 We attach it to our `tutorial-net` network and as we want to be able to reach it from our host, we map the container port `10000` to the port `10000` of our host (we could have chosen here any free port on the host we wish).
 
-This time, our tow services can talk to each others and everything behaves as intended:
+This time, our two services can talk to each others and everything behaves as intended:
 ```
 telnet localhost 10000
 Trying 127.0.0.1...
