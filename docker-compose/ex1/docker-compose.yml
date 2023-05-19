@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+
+  hello:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: docker-compose-tutorial/ex1
+    container_name: ex1
