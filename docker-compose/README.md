@@ -21,3 +21,4 @@ If you have access only to a windows machine, we recommend you install a virtual
 
 ## Examples
 - [Example 1](ex1) : Explains how to create a simple Docker Compose application
+- [Example 2](ex2) : Explains how to create a simple Docker Compose application from a GitHub repository

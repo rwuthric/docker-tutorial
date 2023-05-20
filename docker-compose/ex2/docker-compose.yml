@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+
+  hello:
+    build:
+      context: https://github.com/rwuthric/docker-tutorial.git#:docker-compose/ex1
+      dockerfile: Dockerfile
+    image: docker-compose-tutorial/ex2
+    container_name: ex2
