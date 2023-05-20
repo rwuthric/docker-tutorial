@@ -98,6 +98,19 @@ This command must be run in the same directory where our `docker-compose.yml` fi
 ```
 Note that the Docker Network is removed too. Running `docker ps --all`, confirms that our container was removed.
 
+## Running an interactive container
+As with Docker, it is possible to run a container in interactive mode using the [`docker compose run`](https://docs.docker.com/engine/reference/commandline/compose_run/) command. For our example this is achived like this:
+```
+docker compose run --rm hello bash
+```
+The option `--rm` will remove automatically the container once we exit it. The first argument of `docker compose run` is the name of the service, `hello` in our case, and the second argument the command to be executed, in our case `bash` in order to launch a bash shell. This command will override the command defined in the service configuration (in our case `pyhton3 hello.py`).
+
+Running `docker compose run --rm hello bash` results in an interactive shell inside a container created based on our Docker image:
+```
+test_user@97c1b7c2ebc6:~$ 
+```
+As expected, the interactive shell is run by the user `test_user` as defined in the `Dockerfile`[Dockerfile]. Tu quite the runtime, the command `exit` has to be used. This results in automatic removal of the container, as we used the option `--rm`, as confirms the execution of `docker ps --all`.
+
 ## Cleaning up
 At the end of this exercise it is a good practice to clean up our Docker. Check with `docker ps --all` that no undesired containers are present and remove them if needed with `docker rm`.
 
