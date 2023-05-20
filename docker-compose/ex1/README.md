@@ -99,7 +99,7 @@ This command must be run in the same directory where our `docker-compose.yml` fi
 Note that the Docker Network is removed too. Running `docker ps --all`, confirms that our container was removed.
 
 ## Running an interactive container
-As with Docker, it is possible to run a container in interactive mode using the [`docker compose run`](https://docs.docker.com/engine/reference/commandline/compose_run/) command. For our example this is achived like this:
+As with Docker, it is possible to run a container in interactive mode using the [`docker compose run`](https://docs.docker.com/engine/reference/commandline/compose_run/) command. For our example this is achieved like this:
 ```
 docker compose run --rm hello bash
 ```
