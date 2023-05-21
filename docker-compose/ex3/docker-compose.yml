@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+
+  echo:
+    build:
+      context: https://github.com/rwuthric/docker-tutorial.git#:docker/ex3
+      dockerfile: Dockerfile
+    image: docker-compose-tutorial/ex3
+    container_name: ex3
+    ports: 
+      - "6000:10000"
