@@ -50,14 +50,14 @@ docker compose down
 Running `docker ps --all`, confirms that our container was removed.
 
 ## Cleaning up
-At the end of this exercise it is a good practice to clean up our Docker. Check with `docker ps --all` that no undesired containers are present and remove them if needed with `docker rm`.
+At the end of this exercise it is a good practice to clean up Docker. Check with `docker ps --all` that no undesired containers are present and remove them if needed with `docker rm`.
 
-We can as well remove our Docker image we created with
+The Docker image created during this exercise is removed with
 ```
-docker image rm docker-compose-tutorial/ex2
+docker image rm docker-compose-tutorial/ex3
 ```
-With
+And with
 ```
 docker image prune
 ```
-you can as well remove any unused images.
+any unused images are removed.
