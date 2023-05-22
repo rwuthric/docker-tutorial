@@ -149,7 +149,7 @@ To quit the runtime, we use simply the `exit` command. Once our runtime closed, 
 ## Cleaning up
 At the end of this exercise it is a good practice to clean up Docker. Check with `docker ps --all` that no undesired containers are present and remove them if needed with `docker rm`.
 
-We can as well remove our docker image we created. With
+We can as well remove our Docker image we created. With
 ```
 docker images
 ```
