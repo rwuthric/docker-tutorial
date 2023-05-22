@@ -1,5 +1,6 @@
 # Example 3
 This example shows how to build a Docker image with a micro-service and how to run, stop and remove a container based on this image.
+
 ![Deployment diagram](img/docker-ex3.png)
 *Deployment diagram of this example*
 
