@@ -1,7 +1,9 @@
 # Example 3
 This example shows how to build a Docker image with a micro-service and how to run, stop and remove a container based on this image.
+![Deployment diagram](img/docker-ex3.png)
+*Deployment diagram of this example*
 
-The micro-service from this example will require port mapping in order to be accessible from the Docker host. This aspect will be introduced during this example.
+The micro-service will run in a container named `ex3` and will require port mapping in order to be accessible from the Docker host. This aspect will be introduced during this example.
 
 ## Echo server
 The Docker image we want to build will run a micro-service in form of a Python echo server. The [echo server](echo.py) listens to port `10000` on the `localhost` for incoming connections. 
