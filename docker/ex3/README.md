@@ -34,7 +34,7 @@ Escape character is '^]'.
 This is a test
 This is a test
 ```
-To quit telnet press the `Ctrl` key together with the `]` key and type quit on the prompt:
+To quit telnet press the `Ctrl` key together with the `]` key and type `quit` on the prompt:
 ```
 telnet localhost 10000
 Trying 127.0.0.1...
