@@ -7,7 +7,7 @@ The two micro-services are a front-end and a back-end. They simulate a more comp
 
 *Two micro-services connected by an internal Docker network*
 
-The front-end, listening on port `10000` proposes to the connecting client to chose among three products. When the client chooses one of the products, the front-end will contact the back-end micro-service to ask to convert the prize from CAD to USD. Once converted, the front-end will inform the client about the prize of the product in USD.
+The front-end, listening on port `10000`, proposes to the connecting client to chose among three products. When the client chooses one of the products, the front-end will contact the back-end micro-service to ask to convert the prize from CAD to USD. Once converted, the front-end will inform the client about the prize of the product in USD.
 
 ## Back-end micro-service
 The [back-end micro-service](backend.py) is a TCP server listening on port `3000`. It expects to recive a number (the prize in CAD). Whenever a connection happens, the micro-service gets the current exchange rate of CAD to USD. After, it converts the prize in USD and sends it back to the connecting client.
